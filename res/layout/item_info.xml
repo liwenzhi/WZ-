@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<com.liwenzhi.aib.widget.MaterialRippleLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_height_medium"
+        android:id="@+id/rl_ripple"
+        >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/item_height_medium">
+        <ImageView
+                android:id="@+id/iv_user_info"
+                android:layout_width="@dimen/image_height"
+                android:layout_height="@dimen/image_height"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_launcher"
+                />
+        <TextView
+                android:id="@+id/tv_user_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/iv_user_info"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_normal"
+                android:text="账号信息"
+                />
+    </RelativeLayout>
+</com.liwenzhi.aib.widget.MaterialRippleLayout>

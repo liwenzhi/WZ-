@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <fragment
+            android:name="com.liwenzhi.aib.ui.fragment.NormalTitleBarFragment"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/fragment_titleBar"
+            />
+    <WebView
+            android:id="@+id/webview"
+            android:layout_below="@id/fragment_titleBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:onClick="toback"
+            android:background="@null"
+            android:text="回退网页"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:onClick="topre"
+            android:text="前一网页"/>
+</RelativeLayout>

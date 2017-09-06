@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datas>
+    <data flag="1" title="简答题">
+        <problem>1、面向对象的特征有哪些方面？</problem>
+        <answer>（1）抽象：
+            抽象就是忽略一个主题中与当前目标无关的那些方面，以便更充分地注意与当前目标有关的方面。抽象并不打算了解全部问题，而只是选择其中的一部分，暂时不用部分细节。抽象包括两个方面，一是过程抽象，二是数据抽象。
+            （2）继承：
+            继承是一种联结类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法。对象的一个新类可以从现有的类中派生，这个过程称为类继承。新类继承了原始类的特性，新类称为原始类的派生类（子类），而原始类称为新类的基类（父类）。派生类可以从它的基类那里继承方法和实例变量，并且类可以修改或增加新的方法使之更适合特殊的需要。
+            （3）封装：
+            封装是把过程和数据包围起来，对数据的访问只能通过已定义的界面。面向对象计算始于这个基本概念，即现实世界可以被描绘成一系列完全自治、封装的对象，这些对象通过一个受保护的接口访问其他对象。
+            （4）多态性：
+            多态性是指允许不同类的对象对同一消息作出响应。多态性包括参数化多态性和包含多态性。多态性语言具有灵活、抽象、行为共享、代码共享的优势，很好的解决了应用程序函数同名问题。
+            Java语言的三大特性就是：继承、封装、多态，这三个特性都是基于抽象的。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>2、String是最基本的数据类型吗?</problem>
+        <answer>基本数据类型包括byte、int、char、long、float、double、boolean和short。
+            Java.lang.String类是final类型的，因此不可以继承这个类、不能修改这个类。为了提高效率节省空间，我们可以用StringBuffer类
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>3、int 和 Integer 有什么区别</problem>
+        <answer>Java 提供两种不同的类型：引用类型和原始类型（或内置类型）。Int是java的原始数据类型，Integer是java为int提供的封装类。Java为每个原始类型提供了封装类。
+            原始类型---封装类
+            boolean---Boolean
+            char---Character
+            byte---Byte
+            short---Short
+            int---Integer
+            long---Long
+            float---Float
+            double----Double
+            引用类型和原始类型的行为完全不同，并且它们具有不同的语义。引用类型和原始类型具有不同的特征和用法，它们包括：大小和速度问题，这种类型以哪种类型的数据结构存储，当引用类型和原始类型用作某个类的实例数据时所指定的缺省值。对象引用实例变量的缺省值为 null，而原始类型实例变量的缺省值与它们的类型有关。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>4、String 和StringBuffer的区别StringBuilder</problem>
+        <answer>
+            JAVA平台提供了两个类：String和StringBuffer，它们可以储存和操作字符串，即包含多个字符的字符数据。这个String类提供了数值不可改变的字符串。而这个StringBuffer类提供的字符串进行修改。当你知道字符数据要改变的时候你就可以使用StringBuffer。同时StringBuffer是线程安全的，但是处理速度更慢一点，StringBuilder不是线程安全的，处理速度更快一点。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>5、运行时异常与一般异常有何异同？</problem>
+        <answer>
+            异常表示程序运行过程中可能出现的非正常状态，运行时异常表示虚拟机的通常操作中可能遇到的异常，是一种常见运行错误。java编译器要求方法必须声明抛出可能发生的非运行时异常，但是并不要求必须声明抛出未被捕获的运行时异常。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>6、说出Servlet的生命周期，并说出Servlet和CGI的区别。</problem>
+        <answer>
+            Servlet被服务器实例化后，容器运行其init方法，请求到达时运行其service方法，service方法自动派遣运行与请求对应的doXXX方法（doGet，doPost）等，当服务器决定将实例销毁的时候调用其destroy方法。与cgi的区别在于servlet处于服务器进程中，它通过多线程方式运行其service方法，一个实例可以服务于多个请求，并且其实例一般不会销毁，而CGI对每个请求都产生新的进程，服务完成后就销毁，所以效率上低于servlet。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>7、说出ArrayList,Vector, LinkedList的存储性能和特性</problem>
+        <answer>
+            ArrayList和Vector都是使用数组方式存储数据，此数组元素数大于实际存储的数据以便增加和插入元素，它们都允许直接按序号索引元素，但是插入元素要涉及数组元素移动等内存操作，所以索引数据快而插入数据慢，Vector由于使用了synchronized方法（线程安全），通常性能上较ArrayList差，而LinkedList使用双向链表实现存储，按序号索引数据需要进行前向或后向遍历，但是插入数据时只需要记录本项的前后项即可，所以插入速度较快。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>8、内部类可以引用他包含类的成员吗？有没有什么限制？</problem>
+        <answer>一个内部类对象可以访问创建它的外部类对象的内容</answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>9、Collection 和 Collections的区别。 </problem>
+        <answer>　Collection是集合类的上级接口，继承与他的接口主要有Set 和List.
+            Collections是针对集合类的一个帮助类，他提供一系列静态方法实现对各种集合的搜索、排序、线程安全化等操作。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>10、&amp;和&amp;&amp;的区别</problem>
+        <answer>&amp;是位运算符，表示按位与运算，&amp;&amp;是逻辑运算符，表示逻辑与（and）。
+            判断条件a&amp;&amp;b，如果a是false就不会判断b，但是a&amp;b，a、b都会判断。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>11、HashMap和Hashtable的区别。</problem>
+        <answer> HashMap是Hashtable的轻量级实现（非线程安全的实现），他们都完成了Map接口，主要区别在于HashMap允许空（null）键值（key）,由于非线程安全，效率上可能高于Hashtable。
+            HashMap允许将null作为一个entry的key或者value，而Hashtable不允许。
+            HashMap把Hashtable的contains方法去掉了，改成containsvalue和containsKey。因为contains方法容易让人引起误解。 
+            Hashtable继承自Dictionary类，而HashMap是Java1.2引进的Map interface的一个实现。
+            最大的不同是，Hashtable的方法是Synchronize的，而HashMap不是，在多个线程访问Hashtable时，不需要自己为它的方法实现同步，而HashMap 就必须为之提供外同步。 
+            Hashtable和HashMap采用的hash/rehash算法都大概一样，所以性能不会有很大的差异。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>12、final, finally, finalize的区别。 </problem>
+        <answer>final 用于声明属性，方法和类，分别表示属性不可变，方法不可覆盖，类不可继承。
+            finally是异常处理语句结构的一部分，表示总是执行。
+            finalize是Object类的一个方法，在垃圾收集器执行的时候会调用被回收对象的此方法，可以覆盖此方法提供垃圾收集时的其他资源回收，例如关闭文件等。
+        </answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>13、sleep() 和 wait() 有什么区别? </problem>
+        <answer>sleep是线程类（Thread）的方法，导致此线程暂停执行指定时间，给执行机会给其他线程，但是监控状态依然保持，到时后会自动恢复。调用sleep不会释放对象锁。
+            wait是Object类的方法，对此对象调用wait方法导致本线程放弃对象锁，进入等待此对象的等待锁定池，只有针对此对象发出notify方法（或notifyAll）后本线程才进入对象锁定池准备获得对象锁进入运行状态。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>14、Overload和Override的区别。Overloaded的方法是否可以改变返回值的类型?</problem>
+        <answer>
+            方法的重写Overriding和重载Overloading是Java多态性的不同表现。重写Overriding是父类与子类之间多态性的一种表现，重载Overloading是一个类中多态性的一种表现。如果在子类中定义某方法与其父类有相同的名称和参数，我们说该方法被重写 (Overriding)。子类的对象使用这个方法时，将调用子类中的定义，对它而言，父类中的定义如同被"屏蔽"了。如果在一个类中定义了多个同名的方法，它们或有不同的参数个数或有不同的参数类型，则称为方法的重载(Overloading)。Overloaded的方法是可以改变返回值的类型。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>15、error和exception有什么区别?</problem>
+        <answer>error 表示恢复不是不可能但很困难的情况下的一种严重问题。比如说内存溢出。不可能指望程序能处理这样的情况。
+            exception 表示一种设计或实现问题。也就是说，它表示如果程序运行正常，从不会发生的情况。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>16、同步和异步有何异同，在什么情况下分别使用他们？举例说明。</problem>
+        <answer>如果数据将在线程间共享。例如正在写的数据以后可能被另一个线程读到，或者正在读的数据可能已经被另一个线程写过了，那么这些数据就是共享数据，必须进行同步存取。
+            当应用程序在对象上调用了一个需要花费很长时间来执行的方法，并且不希望让程序等待方法的返回时，就应该使用异步编程，在很多情况下采用异步途径往往更有效率。
+        </answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>17、abstract class和interface有什么区别?</problem>
+        <answer>
+            声明方法的存在而不去实现它的类被叫做抽象类（abstract class），它用于要创建一个体现某些基本行为的类，并为该类声明方法，但不能在该类中实现该类的情况。不能创建abstract 类的实例。然而可以创建一个变量，其类型是一个抽象类，并让它指向具体子类的一个实例。不能有抽象构造函数或抽象静态方法。Abstract 类的子类为它们父类中的所有抽象方法提供实现，否则它们也是抽象类为。取而代之，在子类中实现该方法。知道其行为的其它类可以在类中实现这些方法。
+            接口（interface）是抽象类的变体。在接口中，所有方法都是抽象的。多继承性可通过实现这样的接口而获得。接口中的所有方法都是抽象的，没有一个有程序体。接口只可以定义static final成员变量。接口的实现与子类相似，除了该实现类不能从接口定义中继承行为。当类实现特殊接口时，它定义（即将程序体给予）所有这种接口的方法。然后，它可以在实现了该接口的类的任何对象上调用接口的方法。由于有抽象类，它允许使用接口名作为引用变量的类型。通常的动态联编将生效。引用可以转换到接口类型或从接口类型转换，instanceof 运算符可以用来决定某对象的类是否实现了接口。
+        </answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>18、heap（堆）和stack（栈）有什么区别。</problem>
+        <answer>栈是一种线形集合，其添加和删除元素的操作应在同一段完成。栈按照后进先出的方式进行处理。
+            堆是栈的一个组成元素
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>19、forward 和redirect的区别</problem>
+        <answer>forward是服务器请求资源，服务器直接访问目标地址的URL，把那个URL的响应内容读取过来，然后把这些内容再发给浏览器，浏览器根本不知道服务器发送的内容是从哪儿来的，所以它的地址栏中还是原来的地址。
+            redirect就是服务端根据逻辑,发送一个状态码,告诉浏览器重新去请求那个地址，一般来说浏览器会用刚才请求的所有参数重新请求，所以session,request参数都可以获取。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>20、EJB与JAVA BEAN的区别？</problem>
+        <answer>
+            Java Bean 是可复用的组件，对Java Bean并没有严格的规范，理论上讲，任何一个Java类都可以是一个Bean。但通常情况下，由于Java Bean是被容器所创建（如Tomcat）的，所以Java Bean应具有一个无参的构造器，另外，通常Java Bean还要实现Serializable接口用于实现Bean的持久性。Java Bean实际上相当于微软COM模型中的本地进程内COM组件，它是不能被跨进程访问的。
+            Enterprise Java Bean 相当于DCOM，即分布式组件。它是基于Java的远程方法调用（RMI）技术的，所以EJB可以被远程访问（跨进程、跨计算机）。但EJB必须被布署在诸如Webspere、WebLogic这样的容器中，EJB客户从不直接访问真正的EJB组件，而是通过其容器访问。EJB容器是EJB组件的代理，EJB组件由容器所创建和管理。
+            客户通过容器来访问真正的EJB组件。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>21、Static Nested Class 和 Inner Class的不同。 </problem>
+        <answer>Static Nested Class是被声明为静态（static）的内部类，它可以不依赖于外部类实例被实例化。
+            而通常的内部类需要在外部类实例化后才能实例化。
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>22、JSP中动态INCLUDE与静态INCLUDE的区别？</problem>
+        <answer>动态INCLUDE用jsp:include动作实现 &lt;jsp:include page="included.jsp" flush="true" /&lt;它总是会检查所含文件中的变化，
+            适合用于包含动态页面，并且可以带参数。
+            静态INCLUDE用include伪码实现,定不会检查所含文件的变化，适用于包含静态页面&lt;%@ include file="included.htm" %&lt; 
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>23、说出一些常用的类，包，接口，请各举5个</problem>
+        <answer>常用的类：BufferedReader  BufferedWriter  FileReader  FileWirter  String  Integer
+            常用的包：java.lang  java.awt  java.io  java.util  java.sql
+            常用的接口：Remote  List  Map  Document  NodeList 
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>24、GC是什么? 为什么要有GC? </problem>
+        <answer>
+            GC是垃圾收集的意思（Gabage Collection）,内存处理是编程人员容易出现问题的地方，忘记或者错误的内存回收会导致程序或系统的不稳定甚至崩溃，Java提供的GC功能可以自动监测对象是否超过作用域从而达到自动回收内存的目的，Java语言没有提供释放已分配内存的显示操作方法。 
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>25、short s1 = 1; s1 = s1 + 1;有什么错? short s1 = 1; s1 += 1;有什么错? </problem>
+        <answer>short s1 = 1; s1 = s1 + 1; （s1+1运算结果是int型，需要强制转换类型）
+            short s1 = 1; s1 += 1;（可以正确编译）
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>26、Math.round(11.5)等於多少? Math.round(-11.5)等於多少? </problem>
+        <answer>Math.round(11.5)==12
+            Math.round(-11.5)==-11
+            round方法返回与参数最接近的长整数，参数加1/2后求其floor.
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>27、String s = new String("xyz");创建了几个String Object?</problem>
+        <answer>两个</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>28、设计4个线程，其中两个线程每次对j增加1，另外两个线程对j每次减少1。写出程序。</problem>
+        <answer>以下程序使用内部类实现线程，对j增减的时候没有考虑顺序问题。
+            public class ThreadTest1{
+              private int j;
+              public static void main(String args[]){
+            ThreadTest1 tt=new ThreadTest1();
+            Inc inc=tt.new Inc();
+            Dec dec=tt.new Dec();
+            for(int i=0;i&lt;2;i++){
+            Thread t=new Thread(inc);
+            t.start();
+            t=new Thread(dec);
+            t.start();
+            }
+            }
+              private synchronized void inc(){
+            j++;
+            System.out.println(Thread.currentThread().getName()+"-inc:"+j);
+              }
+              private synchronized void dec(){
+            j--;
+            System.out.println(Thread.currentThread().getName()+"-dec:"+j);
+              }
+              class Inc implements Runnable{
+            public void run(){
+            for(int i=0;i&lt;100;i++){
+            inc();
+            }
+            }
+              }
+              class Dec implements Runnable{
+            public void run(){
+            for(int i=0;i&lt;100;i++){
+            dec();
+            }
+             }
+              }
+            }
+        </answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>29、Java有没有goto?const？</problem>
+        <answer>java中的保留字，现在没有在java中使用。</answer>
+    </data>
+
+    <data flag="1" title="简答题">
+        <problem>30、启动一个线程是用run()还是start()?</problem>
+        <answer>启动一个线程是调用start()方法，使线程所代表的虚拟处理机处于可运行状态，这意味着它可以由JVM调度并执行。这并不意味着线程就会立即运行。run()方法可以产生必须退出的标志来停止一个线程。 
+        </answer>
+    </data>
+
+
+
+    <data flag="1" title="简答题">
+        <problem>31、Anonymous Inner Class (匿名内部类) 是否可以extends(继承)其它类，是否可以implements(实现)interface(接口)? </problem>
+        <answer>可以继承其他类或完成其他接口，在swing编程中常用此方式。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>32、应用服务器有那些？</problem>
+        <answer>BEA WebLogic Server，IBM WebSphere Application Server，Oracle9i Application Server，jBoss，Tomcat</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>33、给我一个你最常见到的runtime exception。</problem>
+        <answer>
+            参考：ArithmeticException, ArrayStoreException, BufferOverflowException, BufferUnderflowException, CannotRedoException, CannotUndoException, ClassCastException, CMMException, ConcurrentModificationException, DOMException, EmptyStackException, IllegalArgumentException, IllegalMonitorStateException, IllegalPathStateException, IllegalStateException, ImagingOpException, IndexOutOfBoundsException, MissingResourceException, NegativeArraySizeException, NoSuchElementException, NullPointerException, ProfileDataException, ProviderException, RasterFormatException, SecurityException, SystemException, UndeclaredThrowableException, UnmodifiableSetException, UnsupportedOperationException
+        </answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>34、接口是否可继承接口? 抽象类是否可实现(implements)接口? 抽象类是否可继承实体类(concrete class)?</problem>
+        <answer>接口可以继承接口。抽象类可以实现(implements)接口，抽象类是否可继承实体类，但前提是实体类必须有明确的构造函数。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>35、List, Set, Map是否继承自Collection接口?</problem>
+        <answer>List，Set是，Map不是</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>36、说出数据连接池的工作机制是什么?</problem>
+        <answer>
+            J2EE服务器启动时会建立一定数量的池连接，并一直维持不少于此数目的池连接。客户端程序需要连接时，池驱动程序会返回一个未使用的池连接并将其表记为忙。如果当前没有空闲连接，池驱动程序就新建一定数量的连接，新建连接的数量有配置参数决定。当使用的池连接调用完成后，池驱动程序将此连接表记为空闲，其他调用就可以使用这个连接。
+        </answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>37、abstract的method是否可同时是static,是否可同时是native，是否可同时是synchronized?</problem>
+        <answer> 都不能</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>38、数组有没有length()这个方法? String有没有length()这个方法？</problem>
+        <answer>数组没有length()这个方法，有length的属性。String有length()这个方法。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>39、Set里的元素是不能重复的，那么用什么方法来区分重复与否呢? 是用==还是equals()? 它们有何区别?</problem>
+        <answer>Set里的元素是不能重复的，那么用iterator()方法来区分重复与否。equals()是判读两个Set是否相等。
+            equals()和==方法决定引用值是否指向同一对象equals()在类中被覆盖，为的是当两个分离的对象的内容和类型相配的话，返回真值。
+        </answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>40、构造器Constructor是否可被override?</problem>
+        <answer>构造器Constructor不能被继承，因此不能重写Overriding，但可以被重载Overloading。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>41、是否可以继承String类?</problem>
+        <answer>String类是final类故不可以继承。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>42、swtich是否能作用在byte上，是否能作用在long上，是否能作用在String上?</problem>
+        <answer>
+            switch（expr1）中，expr1是一个整数表达式。因此传递给 switch 和 case 语句的参数应该是 int、 short、 char 或者 byte。long,string 都不能作用于swtich。
+        </answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>43、try {}里有一个return语句，那么紧跟在这个try后的finally {}里的code会不会被执行，什么时候被执行，在return前还是后?</problem>
+        <answer>会执行，在return前执行。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>44、编程题: 用最有效率的方法算出2乘以8等於几? </problem>
+        <answer>2 &lt;3（2左移一次相当于乘以2，左移三次相等于乘以8）
+        </answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>45、两个对象值相同(x.equals(y) == true)，但却可有不同的hash code，这句话对不对?</problem>
+        <answer>不对，有相同的hash code。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>46、当一个对象被当作参数传递到一个方法后，此方法可改变这个对象的属性，并可返回变化后的结果，那么这里到底是值传递还是引用传递? </problem>
+        <answer>是值传递。Java 编程语言只有值传递参数。当一个对象实例作为一个参数被传递到方法中时，参数的值就是对该对象的引用。对象的内容可以在被调用的方法中改变，但对象的引用是永远不会改变的。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>47、当一个线程进入一个对象的一个synchronized方法后，其它线程是否可进入此对象的其它方法?</problem>
+        <answer>不能，一个对象的一个synchronized方法只能由一个线程访问。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>48、编程题: 写一个Singleton出来。</problem>
+        <answer>Singleton模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。
+            一般Singleton模式通常有几种种形式:
+            第一种形式: 定义一个类，它的构造函数为private的，它有一个static的private的该类变量，在类初始化时实例话，通过一个public的getInstance方法获取对它的引用,继而调用其中的方法。
+            public class Singleton {
+            private Singleton(){}
+            　　    //在自己内部定义自己一个实例，是不是很奇怪？
+            　　    //注意这是private 只供内部调用
+            　　    private static Singleton instance = new Singleton();
+            　　    //这里提供了一个供外部访问本class的静态方法，可以直接访问　　
+            　　    public static Singleton getInstance() {
+            　　　　    return instance; 
+            　　    } 
+                } 
+                第二种形式: 
+            public class Singleton { 
+            　　private static Singleton instance = null;
+            　　public static synchronized Singleton getInstance() {
+            　　//这个方法比上面有所改进，不用每次都进行生成对象，只是第一次　　　 　
+            　　//使用时生成实例，提高了效率！
+            　　if (instance==null)
+            　　　　instance＝new Singleton();
+            return instance; } 
+            } 
+            其他形式:
+            定义一个类，它的构造函数为private的，所有方法为static的。
+            一般认为第一种形式要更加安全些
+        </answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>49、 Java的接口和C++的虚类的相同和不同处。</problem>
+        <answer>相同之处：都不能实例化。
+            不同之处如下：
+            (1)一个子类只能继承一个抽象类（虚类），但能实现多个接口；
+            (2)一个抽象类可以有构造方法，接口没有构造方法；
+            (3)一个抽象类中的方法不一定是抽象方法，即其中的方法可以有实现（有方法体），接口中的方法都是抽象方法，不能有方法体，只有声明；
+            (4)一个抽象类可以是public、private、protected、default,
+               接口只有public;
+            (5)一个抽象类中的方法可以是public、private、protected、default，
+               接口中的方法只能是public和default.
+            补充说明：接口是一类特殊的抽象类，是更抽象的抽象类，你可能这样理解。抽象类是一个不完整的类，接口只是定义了一些功能。打个比方，用抽象类和接口分别描述“猪”，抽象类就是在一般的类之前加abstrict,说：猪能用四肢跑，猪还能怎么怎么，接口的话只能说，猪会跑，用什么跑就是子类的事啦。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>50、Java中的异常处理机制的简单原理和应用。</problem>
+        <answer>当JAVA程序违反了JAVA的语义规则时，JAVA虚拟机就会将发生的错误表示为一个异常。违反语义规则包括2种情况。一种是JAVA类库内置的语义检查。例如数组下标越界,会引发IndexOutOfBoundsException;访问null的对象时会引发NullPointerException。另一种情况就是JAVA允许程序员扩展这种语义检查，程序员可以创建自己的异常，并自由选择在何时用throw关键字引发异常。所有的异常都是java.lang.Thowable的子类。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>51、垃圾回收的优点和原理。并考虑2种回收机制。</problem>
+        <answer>Java语言中一个显著的特点就是引入了垃圾回收机制，使c++程序员最头疼的内存管理的问题迎刃而解，它使得Java程序员在编写程序的时候不再需要考虑内存管理。由于有个垃圾回收机制，Java中的对象不再有"作用域"的概念，只有对象的引用才有"作用域"。垃圾回收可以有效的防止内存泄露，有效的使用可以使用的内存。垃圾回收器通常是作为一个单独的低级别的线程运行，不可预知的情况下对内存堆中已经死亡的或者长时间没有使用的对象进行清楚和回收，程序员不能实时的调用垃圾回收器对某个对象或所有对象进行垃圾回收。回收机制有分代复制垃圾回收和标记垃圾回收，增量垃圾回收。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>52、请说出你所知道的线程同步的方法。</problem>
+        <answer>wait():使一个线程处于等待状态，并且释放所持有的对象的lock。
+            sleep():使一个正在运行的线程处于睡眠状态，是一个静态方法，调用此方法要捕捉InterruptedException异常。
+            notify():唤醒一个处于等待状态的线程，注意的是在调用此方法的时候，并不能确切的唤醒某一个等待状态的线程，而是由JVM确定唤醒哪个线程，而且不是按优先级。
+            notityAll():唤醒所有处入等待状态的线程，注意并不是给所有唤醒线程一个对象的锁，而是让它们竞争。</answer>
+    </data>
+
+
+
+
+    <data flag="1" title="简答题">
+        <problem>53、你所知道的集合类都有哪些？主要方法？</problem>
+        <answer>最常用的集合类是 List 和 Map。 List 的具体实现包括 ArrayList 和 Vector，它们是可变大小的列表，比较适合构建、存储和操作任何类型对象的元素列表。 List 适用于按数值索引访问元素的情形。 
+            Map 提供了一个更通用的元素存储方法。 Map 集合类用于存储元素对（称作"键"和"值"），其中每个键映射到一个值。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>54、描述一下JVM加载class文件的原理机制?</problem>
+        <answer>JVM中类的装载是由ClassLoader和它的子类来实现的,Java ClassLoader 是一个重要的Java运行时系统组件。它负责在运行时查找和装入类文件的类。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>55、char型变量中能不能存贮一个中文汉字?为什么? </problem>
+        <answer>能够定义成为一个中文的，因为java中以unicode编码，一个char占16个字节，所以放一个中文是没问题的</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>56、多线程有几种实现方法,都是什么?同步有几种实现方法,都是什么? </problem>
+        <answer>多线程有两种实现方法，分别是继承Thread类与实现Runnable接口 
+            同步的实现方面有两种，分别是synchronized,wait与notify</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>57、在什么情况下，finally语句不会执行？</problem>
+        <answer>答：如果在try内部执行一条System.exit(0)语句终止应用程序的执行，则finally中的语句不会被执行。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>58、线程的基本概念、线程的基本状态以及状态之间的关系</problem>
+        <answer>线程指在程序执行过程中，能够执行程序代码的一个执行单位，每个程序至少都有一个线程，也就是程序本身。
+            Java中的线程有四种状态分别是：运行、就绪、挂起、结束。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>59、JSP的常用指令</problem>
+        <answer>&lt;%@page language="java" contenType="text/html;charset=gb2312" session="true" buffer="64kb" autoFlush="true" isThreadSafe="true" info="text" errorPage="error.jsp" isErrorPage="true" isELIgnored="true" pageEncoding="gb2312" import="java.sql.*"%&gt;
+            isErrorPage(是否能使用Exception对象)，isELIgnored(是否忽略表达式)
+            &lt;%@include file="filename"%&gt;
+            &lt;%@taglib prefix="c"uri=" http://......"%&gt;</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>60、什么情况下调用doGet()和doPost()？</problem>
+        <answer>Jsp页面中的form标签里的method属性为get时调用doGet()，为post时调用doPost()。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>61、servlet的生命周期</problem>
+        <answer>web容器加载servlet，生命周期开始。通过调用servlet的init()方法进行servlet的初始化。通过调用service()方法实现，根据请求的不同调用不同的do***()方法。结束服务，web容器调用servlet的destroy()方法。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>62、如何现实servlet的单线程模式</problem>
+        <answer>&lt;%@ page isThreadSafe="false"%&gt;</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>63、页面间对象传递的方法</problem>
+        <answer>request，session，application，cookie等</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>64、JSP和Servlet有哪些相同点和不同点，他们之间的联系是什么？ </problem>
+        <answer>JSP是Servlet技术的扩展，本质上是Servlet的简易方式，更强调应用的外表表达。JSP编译后是"类servlet"。Servlet和JSP最主要的不同点在于，Servlet的应用逻辑是在Java文件中，并且完全从表示层中的HTML里分离开来。而JSP的情况是Java和HTML可以组合成一个扩展名为.jsp的文件。JSP侧重于视图，Servlet主要用于控制逻辑。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>65、在JAVA中，如何跳出当前的多重嵌套循环？</problem>
+        <answer>用break; return 方法。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>66、List、Map、Set三个接口，存取元素时，各有什么特点？</problem>
+        <answer>List 以特定次序来持有元素，可有重复元素。Set 无法拥有重复元素,内部排序。Map 保存key-value值，value可多值。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>67、J2EE是什么？</problem>
+        <answer>J2EE是Sun公司提出的多层(multi-diered),分布式(distributed),基于组件(component-base)的企业级应用模型(enterpriese application model).在这样的一个应用系统中，可按照功能划分为不同的组件，这些组件又可在不同计算机上，并且处于相应的层次(tier)中。所属层次包括客户层(clietn tier)组件,web层和组件,Business层和组件,企业信息系统(EIS)层。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>68、J2EE是技术还是平台还是框架？</problem>
+        <answer>J2EE本身是一个标准，一个为企业分布式应用的开发提供的标准平台。
+            J2EE也是一个框架，包括JDBC、JNDI、RMI、JMS、EJB、JTA等技术。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>69、我们在web应用开发过程中经常遇到输出某种编码的字符，如iso8859-1等，如何输出一个某种编码的字符串？</problem>
+        <answer>  Public String translate (String str) {
+                String tempStr = "";
+                try {
+                  tempStr = new Stri   ng(str.getBytes("ISO-8859-1"), "GBK");
+                  tempStr = tempStr.trim();
+                }
+                catch (Exception e) {
+                  System.err.println(e.getMessage());
+                }
+                return tempStr;
+              }</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>70、简述逻辑操作(&amp;,|,^)与条件操作(&amp;&amp;,||)的区别。</problem>
+        <answer>区别主要答两点：
+            （1）条件操作只能操作布尔型的,而逻辑操作不仅可以操作布尔型,而且可以操作数值型
+            （2）逻辑操作不会产生短路
+            短路就是指第一个条件符合时，不再判断第二个条件。而逻辑操作必须要判断两个条件。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>71、XML文档定义有几种形式？它们之间有何本质区别？解析XML文档有哪几种方式？ </problem>
+        <answer>1） 两种形式 dtd  schema，
+            （2） 本质区别:schema本身是xml的，可以被XML解析器解析(这也是从DTD上发展schema的根本目的)，
+            （3）有DOM,SAX,PULL等 
+            DOM:处理大型文件时其性能下降的非常厉害。这个问题是由DOM的树结构所造成的，这种结构占用的内存较多，而且DOM必须在解析文件之前把整个文档装入内存,适合对XML的随机访问
+            SAX:是事件驱动型的XML解析方式。它顺序读取XML文件，不需要一次全部装载整个文件。当遇到像文件开头，文档结束，或者标签开头与标签结束时，它会触发一个事件，用户通过在其回调事件中写入处理代码来处理XML文件，适合对XML的顺序访问
+            PULL：解析器的运行方式和SAX类似，都是基于事件的模式。不同的是，在PULL解析过程中，我们需要自己获取产生的事件然后做相应的操作，而不像SAX那样由处理器触发一种事件的方法，执行我们的代码。PULL解析器小巧轻便，解析速度快，简单易用，非常适合在Android移动设备中使用，Android系统内部在解析各种XML时也是用PULL解析器。    </answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>72、简述synchronized和java.util.concurrent.locks.Lock的异同 ？</problem>
+        <answer>主要相同点：Lock能完成synchronized所实现的所有功能
+            主要不同点：Lock有比synchronized更精确的线程语义和更好的性能。synchronized会自动释放锁，而Lock一定要求程序员手工释放，并且必须在finally从句中释放。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem> 73、j2ee常用的设计模式？说明工厂模式。</problem>
+        <answer> Java中的23种设计模式：
+            Factory（工厂模式），Builder（建造模式），Factory Method（工厂方法模式），Prototype（原始模型模式），Singleton（单例模式），Facade（门面模式），Adapter（适配器模式），Bridge（桥梁模式），Composite（合成模式），Decorator（装饰模式），Flyweight（享元模式）， Proxy（代理模式），Command（命令模式），Interpreter（解释器模式）， Visitor（访问者模式），Iterator（迭代子模式），Mediator（调停者模式），Memento（备忘录模式），Observer（观察者模式），State（状态模式）， Strategy（策略模式），Template Method（模板方法模式）， Chain Of Responsibleity（责任链模式）
+            工厂模式：工厂模式是一种经常被使用到的模式，根据工厂模式实现的类可以根据提供的数据生成一组类中某一个类的实例，通常这一组类有一个公共的抽象父类并且实现了相同的方法，但是这些方法针对不同的数据进行了不同的操作。
+            首先需要定义一个基类，该类的子类通过不同的方法实现了基类中的方法。然后需要定义一个工厂类，工厂类可以根据条件生成不同的子类实例。当得到子类的实例后，开发人员可以调用基类中的方法而不必考虑到底返回的是哪一个子类的实例。    </answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>74、排序都有哪几种方法？请列举。用JAVA实现一个快速排序。</problem>
+        <answer> 排序的方法有：插入排序（直接插入排序、希尔排序），交换排序（冒泡排序、快速排序），选择排序（直接选择排序、堆排序），归并排序，分配排序（箱排序、基数排序）
+            快速排序的伪代码。
+            / /使用快速排序方法对a[ 0 :n- 1 ]排序
+            从a[ 0 :n- 1 ]中选择一个元素作为m i d d l e，该元素为支点
+            把余下的元素分割为两段left 和r i g h t，使得l e f t中的元素都小于等于支点，而right 中的元素都大于等于支点
+            递归地使用快速排序方法对left 进行排序
+            递归地使用快速排序方法对right 进行排序
+            所得结果为l e f t + m i d d l e + r i g h t</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>75、JAVA语言如何进行异常处理，关键字：throws,throw,try,catch,finally分别代表什么意义？在try块中可以抛出异常吗？</problem>
+        <answer>Java通过面向对象的方法进行异常处理，把各种不同的异常进行分类，并提供了良好的接口。在Java中，每个异常都是一个对象，它是Throwable类或其它子类的实例。当一个方法出现异常后便抛出一个异常对象，该对象中包含有异常信息，调用这个对象的方法可以捕获到这个异常并进行处理。Java的异常处理是通过5个关键词来实现的：try、catch、throw、throws和finally。一般情况下是用try来执行一段程序，如果出现异常，系统会抛出（throws）一个异常，这时候你可以通过它的类型来捕捉（catch）它，或最后（finally）由缺省处理器来处理。
+            用try来指定一块预防所有"异常"的程序。紧跟在try程序后面，应包含一个catch子句来指定你想要捕捉的"异常"的类型。
+            throw语句用来明确地抛出一个"异常"。
+            throws用来标明一个成员函数可能抛出的各种"异常"。
+            Finally为确保一段代码不管发生什么"异常"都被执行一段代码。
+            可以在一个成员函数调用的外面写一个try语句，在这个成员函数内部写另一个try语句保护其他代码。每当遇到一个try语句，"异常"的框架就放到堆栈上面，直到所有的try语句都完成。如果下一级的try语句没有对某种"异常"进行处理，堆栈就会展开，直到遇到有处理这种"异常"的try语句。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>76、一个".java"源文件中是否可以包括多个类（不是内部类）？有什么限制？</problem>
+        <answer>可以。必须只有一个类名与文件名相同。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>77、MVC的各个部分都有那些技术来实现?如何实现? </problem>
+        <answer>MVC是Model－View－Controller的简写。
+            "Model" 代表的是应用的业务逻辑（通过JavaBean，EJB组件实现）， "View" 是应用的表示面（由JSP页面产生），"Controller" 是提供应用的处理过程控制（一般是一个Servlet），通过这种设计模型把应用逻辑，处理过程和显示逻辑分成不同的组件实现。这些组件可以进行交互和重用。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>78、java中有几种方法可以实现一个线程？用什么关键字修饰同步方法? stop()和suspend()方法为何不推荐使用？</problem>
+        <answer>有两种实现方法，分别是继承Thread类与实现Runnable接口
+            用synchronized关键字修饰同步方法反对使用stop()，是因为它不安全。它会解除由线程获取的所有锁定，而且如果对象处于一种不连贯状态，那么其他线程能在那种状态下检查和修改它们。结果很难检查出真正的问题所在。suspend()方法容易发生死锁。调用suspend()的时候，目标线程会停下来，但却仍然持有在这之前获得的锁定。此时，其他任何线程都不能访问锁定的资源，除非被"挂起"的线程恢复运行。对任何线程来说，如果它们想恢复目标线程，同时又试图使用任何一个锁定的资源，就会造成死锁。所以不应该使用suspend()，而应在自己的Thread类中置入一个标志，指出线程应该活动还是挂起。若标志指出线程应该挂起，便用wait()命其进入等待状态。若标志指出线程应当恢复，则用一个notify()重新启动线程。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>79、java中有几种类型的流？JDK为每种类型的流提供了一些抽象类以供继承，请说出他们分别是哪些类？</problem>
+        <answer>字节流，字符流。字节流继承于InputStream OutputStream，字符流继承于InputStreamReader OutputStreamWriter。在java.io包中还有许多其他的流，主要是为了提高性能和使用方便。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>80、java中会存在内存泄漏吗，请简单描述。</problem>
+        <answer>会。如：int i,i2;  return (i-i2);   //when i为足够大的正数,i2为足够大的负数。结果会造成溢位，导致错误。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>81、java中实现多态的机制是什么？</problem>
+        <answer>方法的重写Overriding和重载Overloading是Java多态性的不同表现。重写Overriding是父类与子类之间多态性的一种表现，重载Overloading是一个类中多态性的一种表现。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>82、垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？</problem>
+        <answer>对于GC来说，当程序员创建对象时，GC就开始监控这个对象的地址、大小以及使用情况。通常，GC采用有向图的方式记录和管理堆(heap)中的所有对象。通过这种方式确定哪些对象是"可达的"，哪些对象是"不可达的"。当GC确定一些对象为"不可达"时，GC就有责任回收这些内存空间。可以。程序员可以手动执行System.gc()，通知GC运行，但是Java语言规范并不保证GC一定会执行。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>83、静态变量和实例变量的区别？</problem>
+        <answer>static int i = 10; //静态变量，常量
+               class A a;    //示例变量
+            静态变量可以直接用类名来获取，而实例化变量要类的实例化对象来获取。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>84、什么是java序列化，如何实现java序列化？</problem>
+        <answer>序列化就是一种用来处理对象流的机制，所谓对象流也就是将对象的内容进行流化。可以对流化后的对象进行读写操作，也可将流化后的对象传输于网络之间。序列化是为了解决在对对象流进行读写操作时所引发的问题。
+            序列化的实现：将需要被序列化的类实现Serializable接口，该接口没有需要实现的方法，implements Serializable只是为了标注该对象是可被序列化的，然后使用一个输出流(如：FileOutputStream)来构造一个ObjectOutputStream(对象流)对象，接着，使用ObjectOutputStream对象的writeObject(Object obj)方法就可以将参数为obj的对象写出(即保存其状态)，要恢复的话则用输入流。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>85、是否可以从一个static方法内部发出对非static方法的调用？</problem>
+        <answer>不可以,如果其中包含对象的method()；不能保证对象初始化.</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>86、写clone()方法时，通常都有一行代码，是什么？ </problem>
+        <answer>Clone 有缺省行为，super.clone();他负责产生正确大小的空间，并逐位复制。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>87、UML方面</problem>
+        <answer>标准建模语言UML。用例图,静态图(包括类图、对象图和包图),行为图,交互图(顺序图,合作图),实现图。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>88、开发中都用到了那些设计模式?用在什么场合? </problem>
+        <answer>每个模式都描述了一个在我们的环境中不断出现的问题，然后描述了该问题的解决方案的核心。通过这种方式，你可以无数次地使用那些已有的解决方案，无需在重复相同的工作。主要用到了MVC的设计模式。用来开发JSP/Servlet或者J2EE的相关应用。简单工厂模式等。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>89、jsp有哪些动作?作用分别是什么? </problem>
+        <answer>JSP共有以下6种基本动作 jsp:include：在页面被请求的时候引入一个文件。 jsp:useBean：寻找或者实例化一个JavaBean。 jsp:setProperty：设置JavaBean的属性。 jsp:getProperty：输出某个JavaBean的属性。 jsp:forward：把请求转到一个新的页面。 jsp:plugin：根据浏览器类型为Java插件生成OBJECT或EMBED标记。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>90、应用服务器与WEB SERVER的区别？</problem>
+        <answer>应用服务器：Weblogic、Tomcat、Jboss
+            WEB SERVER：IIS、 Apache</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>91、BS与CS的联系与区别。    </problem>
+        <answer>C/S是Client/Server的缩写。服务器通常采用高性能的PC、工作站或小型机，并采用大型数据库系统，如Oracle、Sybase、Informix或 SQL Server。客户端需要安装专用的客户端软件。
+            B/Ｓ是Brower/Server的缩写，客户机上只要安装一个浏览器（Browser），如Netscape Navigator或Internet Explorer，服务器安装Oracle、Sybase、Informix或 SQL Server等数据库。在这种结构下，用户界面完全通过WWW浏览器实现，一部分事务逻辑在前端实现，但是主要事务逻辑在服务器端实现。浏览器通过Ｗeb Server 同数据库进行数据交互。
+            C/S 与 B/S 区别： 
+            （1）硬件环境不同: 
+            　　C/S 一般建立在专用的网络上, 小范围里的网络环境, 局域网之间再通过专门服务器提供连接和数据交换服务.
+            　　B/S 建立在广域网之上的, 不必是专门的网络硬件环境,例与电话上网, 租用设备. 信息自己管理. 有比C/S更强的适应范围, 一般只要有操作系统和浏览器就行 
+            （2）对安全要求不同 
+            　　C/S 一般面向相对固定的用户群, 对信息安全的控制能力很强. 一般高度机密的信息系统采用C/S 结构适宜. 可以通过B/S发布部分可公开信息.
+            　　B/S 建立在广域网之上, 对安全的控制能力相对弱, 可能面向不可知的用户。
+            （3）对程序架构不同 
+            　　C/S 程序可以更加注重流程, 可以对权限多层次校验, 对系统运行速度可以较少考虑.
+            　　B/S 对安全以及访问速度的多重的考虑, 建立在需要更加优化的基础之上. 比C/S有更高的要求 B/S结构的程序架构是发展的趋势, 从MS的.Net系列的BizTalk 2000 Exchange 2000等, 全面支持网络的构件搭建的系统. SUN 和IBM推的JavaBean 构件技术等,使 B/S更加成熟. 
+            （4）软件重用不同 
+            　　C/S 程序可以不可避免的整体性考虑, 构件的重用性不如在B/S要求下的构件的重用性好.
+            　　B/S 对的多重结构,要求构件相对独立的功能. 能够相对较好的重用.就入买来的餐桌可以再利用,而不是做在墙上的石头桌子 
+            （5）系统维护不同  
+            　　C/S 程序由于整体性, 必须整体考察, 处理出现的问题以及系统升级. 升级难. 可能是再做一个全新的系统
+            　　B/S 构件组成,方面构件个别的更换,实现系统的无缝升级. 系统维护开销减到最小.用户从网上自己下载安装就可以实现升级. 
+            （6）处理问题不同 
+            　　C/S 程序可以处理用户面固定, 并且在相同区域, 安全要求高需求, 与操作系统相关. 应该都是相同的系统
+            　　B/S 建立在广域网上, 面向不同的用户群, 分散地域, 这是C/S无法作到的. 与操作系统平台关系最小. 
+            （7）用户接口不同 
+            　　C/S 多是建立的Window平台上,表现方法有限,对程序员普遍要求较高
+            　　B/S 建立在浏览器上, 有更加丰富和生动的表现方式与用户交流. 并且大部分难度减低,减低开发成本. 
+            （8）信息流不同 
+            　　C/S 程序一般是典型的中央集权的机械式处理, 交互性相对低
+            　　B/S 信息流向可变化, B-B B-C B-G等信息、流向的变化, 更像交易中心。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem> 92、Collection 和 Collections的区别？</problem>
+        <answer> Collection是集合类的上级接口，继承与他的接口主要有Set 和List.
+                Collections是针对集合类的一个帮助类，他提供一系列静态方法实现对各种集合的搜索、排序、线程安全化等操作。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>93.JDK和JRE的区别是什么？  </problem>
+        <answer>Java运行时环境(JRE)是将要执行Java程序的Java虚拟机。它同时也包含了执行applet需要的浏览器插件。Java开发工具包(JDK)是完整的Java软件开发包，包含了JRE，编译器和其他的工具(比如：JavaDoc，Java调试器)，可以让开发者开发、编译、执行Java应用程序。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>94.Java中，什么是构造函数？什么是构造函数重载？什么是复制构造函数？</problem>
+        <answer>当新对象被创建的时候，构造函数会被调用。每一个类都有构造函数。在程序员没有给类提供构造函数的情况下，Java编译器会为这个类创建一个默认的构造函数。
+            Java中构造函数重载和方法重载很相似。可以为一个类创建多个构造函数。每一个构造函数必须有它自己唯一的参数列表。
+            Java不支持像C++中那样的复制构造函数，这个不同点是因为如果你不自己写构造函数的情况下，Java不会创建默认的复制构造函数。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>95.什么是迭代器(Iterator)？</problem>
+        <answer>Iterator接口提供了很多对集合元素进行迭代的方法。每一个集合类都包含了可以返回迭代器实例的迭代方法。迭代器可以在迭代的过程中删除底层集合的元素。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>96.Iterator和ListIterator的区别是什么？</problem>
+        <answer>下面列出了他们的区别：
+            （1）Iterator可用来遍历Set和List集合，但是ListIterator只能用来遍历List。
+            （2）Iterator对集合只能是前向遍历，ListIterator既可以前向也可以后向。
+            （3）ListIterator实现了Iterator接口，并包含其他的功能，比如：增加元素，替换元素，获取前一个和后一个元素的索引，等等。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>97.Comparable和Comparator接口是干什么的？列出它们的区别。</problem>
+        <answer>ava提供了只包含一个compareTo()方法的Comparable接口。这个方法可以个给两个对象排序。具体来说，它返回负数，0，正数来表明输入对象小于，等于，大于已经存在的对象。
+            Java提供了包含compare()和equals()两个方法的Comparator接口。compare()方法用来给两个输入参数排序，返回负数，0，正数表明第一个参数是小于，等于，大于第二个参数。equals()方法需要一个对象作为参数，它用来决定输入参数是否和comparator相等。只有当输入参数也是一个comparator并且输入参数和当前comparator的排序结果是相同的时候，这个方法才返回true。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>98.HashSet和TreeSet有什么区别？</problem>
+        <answer>HashSet是由一个hash表来实现的，因此，它的元素是无序的。add()，remove()，contains()方法的时间复杂度是O(1)。
+            另一方面，TreeSet是由一个树形的结构来实现的，它里面的元素是有序的。因此，add()，remove()，contains()方法的时间复杂度是O(logn)。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>98、在Java转义字符中，“\uxxxx”代表什么？</problem>
+        <answer> 答：\uxxxx是Java中的字符编码方式，其中前缀 \u就表示该字符是unicode字符，xxxx表示1到4位16进制数，用这种转义字符形式可以表示unicode字符集中的任意字符。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>99、如何实现字符串的分割？</problem>
+        <answer> 答：第一种方法是采用split()方法，将分割后的内容保存在指定的字符串数组中；第二种方法是采用StringTokenizer，利用StringTokenizer的nextToken()、hasMoreTokens()等方法进行分割。 </answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>100、描述一下JVM加载class文件的原理机制?</problem>
+        <answer> 答：JVM中类的装载是由ClassLoader和它的子类来实现的,Java ClassLoader 是一个重要的Java运行时系统组件。它负责在运行时查找和装入类文件的类。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem> 架构模式</problem>
+        <answer>通常说的MVC就是一种架构模式，我们不要把MVC当为一种设计模式。
+            MVP是根据MVC演变来的一种框架模式，当然MVP比MVC更加解耦。</answer>
+    </data>
+
+
+    <data flag="1" title="简答题">
+        <problem>J2EE设计模式   </problem>
+        <answer>J2EE设计模式在过去几年中随着Java开发人员经验的不断成长而发展。这些设计模式是针对使用各种J2EE技术时可能出现的问题提出的，它们能够帮助开发人员构造出应用程序框架的要求。例如，Front Controller（前端控件）模式将servlet代码的开发转化为在图形用户界面下的开发。但是需要记住J2EE设计模型解决了那些在J2EE项目中最可能出现的问题。如果你在J2EE遇到的问题很特殊，很有可能没有相应的设计模型来解决它。 
+
+            软件开发设计模式 
+
+            软件开发设计模式又被分为两种，一种是通用的面向对象设计模式。例如工厂（Factory）模式是一种面向对象的设计模式，它将对象的创建封装起来，使对象能够重用，这样就可以减少程序占用的系统资源。而另一种是基于Java的设计模式，这些设计模式要么是和Java的语言特性结合得很紧，要么是面向对象技术在Java中的深化。不要以为软件设计模式相对独立于J2EE就认为它们不重要，通常它们比J2EE设计模式更重要。这是因为： 
+
+            1）J2EE设计模式是近几年才出现的，并且在不断变化，而软件开发设计模式经过了长时间的考验，比前者更加成熟和完善； 
+
+            2）有些J2EE设计模式是建立在某些软件开发设计模式之上的； 
+
+            3）软件开发模式为J2EE设计模式提供了坚实的基础。它的应用将影响到整个结构的稳定性和可扩充性。 
+
+            在实际应用中，设计模式并不是一段具体的代码。设计模式通常是在设计说明书中描述。将设计模式应用到系统中的真正挑战在于如何在系统中应用模式中的思想。这些思想必须被应用到恰当的环境中。 
+
+            根据设计模式的所解决的问题，又可以分为以下几个类型： 
+
+            · 创建类型：创建类型的模式都是用于创建类的实例。但是和通过new来创建实例不同，这些模式提供了更加灵活的方式，是程序能够根据特定的情况创建特定的类。 
+
+            · 结构类型：结构类型的模式帮助开发人员将简单对象组合在一起以后的更加复杂的结构。 
+
+            · 行为类型：行为类型的模式帮助开发人员控制类之间的通讯。 
+
+            创建类型的模式 
+
+            所有创建类型的模式都和如何有效地创建类的实例相关。在Java中，如果开发人员要生成一个类的实例，最简单的方法是使用new关键字： 
+            MyFoo = new Foo();  // 生成一个Foo的实例
+
+
+            这种方法只能够在程序中生成固定的类。但是在很多情况下，程序需要根据不同的情况生成不同的类的实例，这就需要将实例的生成过程抽象到一个特殊的创建类中，由该类在运行时决定生成哪种类的实例。这样使得程序有更好的灵活性和通用性。 
+
+            创建类型的模式包括： 
+
+            · 工厂模式（Factory Pattern）：根据工厂模式实现的类可以根据提供的数据生成一组类中某一个类的实例，而这一组类有一个公共的抽象父类。 
+
+            · 抽象工厂模式（Abstract Factory Pattern）：抽象工厂模式也可以根据提供的数据生成一组类中某一个类的实例，而这一组类有一个公共的抽象父类。只不过它定义的是一个接口。 
+
+            · 构造者模式（Builder Pattern）：构造者模式将一个复杂对象的构造过程和它的表现层分离开来，这样类就可以根据不同情况展现出不同的表现方式。 
+
+            · 原型模式（Prototype Pattern）：原型模式通过对类的实例进行拷贝来创建新的实例。 
+
+            · 单例模式（Singleton Pattern）：根据单一模式实现的类只允许有一个是类，并且提供了一个全局指针来引用该实例。 
+
+            结构类型的模式 
+
+            结构类型的模式将类和对象组合起来，以构成更加复杂的结构。它又被划分为类模式和对象模式。类模式和对象模式之间的区别在于类模式通过继承关系来提供有效的接口；而类模式通过对象合成或将对象包含在其它对象中的方式构成更加复杂的结构。 
+
+            结构类型的模式包括了以下模式： 
+
+            · 适配器模式（Adapter Pattern）：适配器模式可以将一个类的接口和另一个类的接口匹配起来。 
+
+            · 桥梁模式（Bridge Pattern）：桥梁模式对客户端程序提供一个固定的接口，但是允许开发人员变化实际的实现类。这样开发人员就可以将接口是具体的实现类分离开来。 
+
+            · 组合模式（Composite Pattern）：复合模式可以将多个对象进行复合，其中的每个对象可以是简单对象，也可以是复合对象。 
+
+            · 代理模式（Proxy Pattern）：代理模式利用一个简单的对象替代一个复杂的对象，当复杂对象在需要的时候才会被加载到系统中，这样可以节约系统资源，提高系统的响应速度。在网络环境中这种模式很有用处。 
+
+            · 装饰者模式（Decorator Pattern）：通过修饰模式，开发人员可以在运行时将特定的功能绑定在对象上。 
+
+            · 享元模式（Flyweight Pattern）：轻量模式通过将对象中的一部分数据保存在对象外，在调用对象中的方法时再将这些数据传回对象。这样做可以减少大量比较简单的对象占用的空间。 
+
+            · 门面模式（Facade Pattern）：正面模式将复杂的类层次结构组织起来，通过一个简单的接口来获得层次结构中的数据。 
+
+            行为类型的模式 
+
+            行为类型的模式主要是那些处理对象之间通讯的模式，该类型的包括以下模式： 
+
+            · 观察者模式（Observer Pattern）：观测者模式可以在发生变化时将变化通知多个类。 
+
+            · 调停者模式（Mediator Pattern）：中介模式可以通过一个中间类来控制若干个类之间的通讯，并且这些类相互之间不需要了解对方的信息。 
+
+            · 备忘录模式（Memento Pattern）：回忆模式可以在不破坏对象封装性的前提下保存和恢复对象的内部状态。 
+
+            · 责任链模式（Chain of Responsibility）：职责链模式将请求传递给一组对象，只有特定的对象才会处理该请求。这样就进一步削弱类之间的联系。 
+
+            · 命令模式（Command Pattern）：命令模式将请求传递给特定的对象，这样客户端即使在不知道服务器端如何处理请求的情况下也可以发送请求。 
+
+            · 模板方法模式（Template Method Pattern）：模板模式提供了对算法的抽象定义。 
+
+            · 策略模式（Strategy Pattern）: 策略模式定义了一组算法，将每个算法都封装起来，并且使它们之间可以互换。策略模式使这些算法在客户端调用它们的时候能够互不影响地变化。 
+
+            · 访问者模式（Visitor Pattern）：访问者模式通过一个访问类来访问其他类中的数据。 
+
+            · 状态模式（State Pattern）：状态模式将一个类实例的变量保存在独立的内存空间中。 
+
+            · 迭代子模式（Iterator Pattern）：迭代模式在不知道数据的内部表现形式的前提下，通过标准的接口来遍历数据集合中的数据。 </answer>
+    </data>
+
+
+
+</datas>

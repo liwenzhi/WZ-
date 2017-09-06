@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 被选中时，颜色变为橙色 -->
+    <item android:state_checked="true" android:color="@color/white" />
+    <!-- 没有被选中时，颜色变为蓝色 -->
+    <!-- <item android:state_checked="false" android:color="#00f"/>如果这里设置，那么按下功能就没有作用了 -->
+    <!-- 按下是显示蓝色 -->
+    <item android:state_pressed="true" android:color="#00f"/>
+    <!-- 松开时显示灰色 -->
+    <item android:state_pressed="false" android:color="#8000"/>
+
+</selector>

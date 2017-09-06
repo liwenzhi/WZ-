@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/assets/android_data.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/comment_data.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/assets/java_data.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/color/condition_text_select.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/color/diagnosis_text_select.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/color/info_text_select.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/color/pie_text_select.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/color/sort_text_select.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/color/tab_text_select.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/diagnosis_select.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/pie_select.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/selector_square_orange.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/selector_white_gray.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/shape_gray_light.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/shape_square_orange_main.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/shape_square_orange_nomal.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/drawable/shape_white.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/layout/activity_splash.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/liwenzhi/aib/ui/activity/SplashActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/liwenzhi/aib/ui/mvp/model/SplashModel.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/liwenzhi/aib/ui/mvp/presenter/SplashActivityPresenter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/liwenzhi/aib/ui/mvp/view/SplashActivityView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/liwenzhi/aib/util/ParseXmlFromAssets.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/liwenzhi/aib/widget/RoundProgressBar.java" charset="UTF-8" />
+  </component>
+</project>

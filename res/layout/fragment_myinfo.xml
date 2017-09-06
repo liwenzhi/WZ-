@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.liwenzhi.aib.widget.SpringScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:layout_marginTop="20dp"
+                android:text="Android面试必备的一个宝典工具WZ_AIB"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:textSize="18sp"
+                />
+        <TextView
+                android:layout_marginTop="5dp"
+                android:text="WZwenzhi Android安卓  Interview面试  Bible宝典"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:textSize="16sp"
+                />
+        <TextView
+                android:padding="20dp"
+                android:text="       面试前,对知识进行简单的浏览，减少紧张感的同时，也能加深对一些知识的认识。"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                />
+
+        <TextView
+                android:padding="20dp"
+                android:text="       我的QQ号码：170426029，欢迎大家提出意见。"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                />
+        <TextView
+                android:padding="20dp"
+                android:text="博客网址：http://blog.csdn.net/wenzhi20102321"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                />
+
+        <TextView
+                android:id="@+id/tv_scanCSDN"
+                android:text="我的CSDN博客-各种Android知识"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:textColor="@color/info_text_select"
+                android:layout_gravity="center"
+                />
+        <TextView
+                android:id="@+id/tv_scanWeb"
+                android:text="Android面试知识网页版"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:textColor="@color/info_text_select"
+                android:layout_gravity="center"
+                />
+
+    </LinearLayout>
+</com.liwenzhi.aib.widget.SpringScrollView>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.liwenzhi.aib"
+          android:versionCode="2"
+          android:versionName="1.1">
+    <uses-sdk android:minSdkVersion="16"/>
+    <!-- 网络 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 访问网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 访问WIFI状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!--读写权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--华为手机需要的权限-->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+
+    <application
+            android:name=".app.App"
+            android:label="@string/app_name" android:icon="@drawable/interview521"
+            android:theme="@style/SwipeBackStyle"
+            >
+
+        <activity android:name=".ui.activity.MainActivity"
+                  android:label="@string/app_name"
+                  android:launchMode="singleTask"
+                >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.QuestionsActivity"/>
+        <activity android:name=".ui.activity.CSDNWebActivity"/>
+        <activity android:name=".ui.activity.SplashActivity"/>
+        <activity android:name=".ui.activity.CommonActivity"/>
+    </application>
+</manifest>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- TitleBar -->
+    <declare-styleable name="TitleBar">
+        <attr name="titleBarTitle" format="string"/>
+        <attr name="titleBarRightText" format="string"/>
+        <attr name="titleBarLeftImage" format="reference"/>
+        <attr name="titleBarRightImage" format="reference"/>
+        <attr name="titleBarBackground" format="reference|color"/>
+    </declare-styleable>
+
+    <declare-styleable name="DropDownMenu">
+
+        <attr name="ddunderlineColor" format="color"/>
+        <attr name="dddividerColor" format="color"/>
+        <attr name="ddtextSelectedColor" format="color"/>
+        <attr name="ddtextUnselectedColor" format="color"/>
+        <attr name="ddmenuBackgroundColor" format="color"/>
+        <attr name="ddmaskColor" format="color"/>
+        <attr name="ddmenuTextSize" format="dimension"/>
+        <attr name="ddmenuSelectedIcon" format="reference"/>
+        <attr name="ddmenuUnselectedIcon" format="reference"/>
+        <attr name="ddmenuIconToRight" format="boolean"/>
+    </declare-styleable>
+
+    <!--自定义的View属性-->
+    <declare-styleable name="MaterialCalendarView">
+
+        <attr name="mcv_dateTextAppearance" format="reference"/>
+        <attr name="mcv_weekDayTextAppearance" format="reference"/>
+        <attr name="mcv_headerTextAppearance" format="reference"/>
+
+        <attr name="mcv_arrowColor" format="color"/>
+        <attr name="mcv_leftArrowMask" format="reference"/>
+        <attr name="mcv_rightArrowMask" format="reference"/>
+        <attr name="mcv_selectionColor" format="color"/>
+
+        <attr name="mcv_showOtherDates" format="integer">
+            <flag name="none" value="0"/>
+            <flag name="other_months" value="1"/>
+            <flag name="out_of_range" value="2"/>
+            <flag name="decorated_disabled" value="4"/>
+            <flag name="defaults" value="4"/>
+            <flag name="all" value="7"/>
+        </attr>
+
+        <attr name="mcv_allowClickDaysOutsideCurrentMonth" format="boolean"/>
+
+        <attr name="mcv_weekDayLabels" format="reference"/>
+        <attr name="mcv_monthLabels" format="reference"/>
+
+        <!-- We want to accept match_parent but not wrap_content. It'd be better if we could
+        point to the real match_parent constant, but since it hasn't change since API 1,
+        I think it's safe to hardcode it-->
+        <attr name="mcv_tileSize" format="dimension">
+            <enum name="match_parent" value="-1"/>
+        </attr>
+        <attr name="mcv_tileHeight" format="dimension">
+            <enum name="match_parent" value="-1"/>
+        </attr>
+        <attr name="mcv_tileWidth" format="dimension">
+            <enum name="match_parent" value="-1"/>
+        </attr>
+
+        <attr name="mcv_firstDayOfWeek" format="enum">
+            <enum name="sunday" value="1"/>
+            <enum name="monday" value="2"/>
+            <enum name="tuesday" value="3"/>
+            <enum name="wednesday" value="4"/>
+            <enum name="thursday" value="5"/>
+            <enum name="friday" value="6"/>
+            <enum name="saturday" value="7"/>
+        </attr>
+
+        <attr name="mcv_calendarMode" format="enum">
+            <enum name="month" value="0"/>
+            <enum name="week" value="1"/>
+        </attr>
+
+        <attr name="mcv_titleAnimationOrientation" format="enum">
+            <enum name="vertical" value="0"/>
+            <enum name="horizontal" value="1"/>
+        </attr>
+    </declare-styleable>
+
+
+    <attr name="rigthtPadding" format="dimension"/>
+
+    <declare-styleable name="QQSliddingMenu">
+        <attr name="rigthtPadding"/>
+    </declare-styleable>
+
+    <!--******FLoating Action Button ******-->
+    <declare-styleable name="FloatingActionButton">
+        <attr name="fab_colorPressed" format="color"/>
+        <attr name="fab_colorDisabled" format="color"/>
+        <attr name="fab_colorNormal" format="color"/>
+        <attr name="fab_icon" format="reference"/>
+        <attr name="fab_size" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="mini" value="1"/>
+        </attr>
+        <attr name="fab_title" format="string"/>
+        <attr name="fab_stroke_visible" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="AddFloatingActionButton">
+        <attr name="fab_plusIconColor" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="FloatingActionsMenu">
+        <attr name="fab_addButtonColorPressed" format="color"/>
+        <attr name="fab_addButtonColorNormal" format="color"/>
+        <attr name="fab_addButtonSize" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="mini" value="1"/>
+        </attr>
+        <attr name="fab_addButtonPlusIconColor" format="color"/>
+        <attr name="fab_addButtonStrokeVisible" format="boolean"/>
+        <attr name="fab_labelStyle" format="reference"/>
+        <attr name="fab_labelsPosition" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>
+        <attr name="fab_expandDirection" format="enum">
+            <enum name="up" value="0"/>
+            <enum name="down" value="1"/>
+            <enum name="left" value="2"/>
+            <enum name="right" value="3"/>
+        </attr>
+    </declare-styleable>
+
+    <!--UCViewPager-->
+    <attr name="item_count" format="integer"></attr>
+    <declare-styleable name="ViewPagerIndicator">
+        <attr name="item_count"/>
+    </declare-styleable>
+    <!-- 源文件图片 -->
+    <attr name="src" format="reference"/>
+
+    <declare-styleable name="RotatImageView">
+        <attr name="src"/>
+    </declare-styleable>
+
+    <!--SwipeBackLayout-->
+    <declare-styleable name="SwipeBackLayout">
+        <attr name="edge_size" format="dimension"/>
+        <attr name="edge_flag">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+            <enum name="bottom" value="2"/>
+            <enum name="all" value="3"/>
+        </attr>
+        <attr name="shadow_left" format="reference"/>
+        <attr name="shadow_right" format="reference"/>
+        <attr name="shadow_bottom" format="reference"/>
+    </declare-styleable>
+
+    <attr name="SwipeBackLayoutStyle" format="reference"/>
+
+
+    <!--     BottomNavigationBar        -->
+    <declare-styleable name="BottomNavigationBar">
+        <attr name="bnbElevation" format="dimension"/>
+        <attr name="bnbActiveColor" format="color"/>
+        <attr name="bnbInactiveColor" format="color"/>
+        <attr name="bnbBackgroundColor" format="color"/>
+        <attr name="bnbAnimationDuration" format="integer"/>
+        <attr name="bnbMode" format="enum">
+            <enum name="mode_default" value="0"/>
+            <enum name="mode_fixed" value="1"/>
+            <enum name="mode_shifting" value="2"/>
+        </attr>
+        <attr name="bnbBackgroundStyle" format="enum">
+            <enum name="background_style_default" value="0"/>
+            <enum name="background_style_static" value="1"/>
+            <enum name="background_style_ripple" value="2"/>
+        </attr>
+        <attr name="bnbAutoHideEnabled" format="boolean"/>
+    </declare-styleable>
+
+    <!--          SearchView    -->
+
+    <!-- MaterialSearchView 搜索框视图 -->
+    <declare-styleable name="MaterialSearchView">
+        <attr name="searchBackground" format="reference"/>
+        <attr name="searchVoiceIcon" format="reference"/>
+        <attr name="searchCloseIcon" format="reference"/>
+        <attr name="searchBackIcon" format="reference"/>
+        <attr name="searchSuggestionIcon" format="reference"/>
+        <attr name="searchSuggestionBackground" format="reference"/>
+        <attr name="hint" format="string"/>
+    </declare-styleable>
+
+    <!-- 欢迎界面,跳过按钮属性 -->
+    <declare-styleable name="RoundProgressBar">
+        <attr name="roundColor" format="color"/>
+        <attr name="roundProgressColor" format="color"/>
+        <attr name="progressColor" format="color"/>
+        <attr name="roundWidth" format="dimension"></attr>
+        <attr name="textColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="text" format="string"/>
+        <attr name="max" format="integer"></attr>
+        <attr name="textIsDisplayable" format="boolean"></attr>
+        <attr name="style">
+            <enum name="STROKE" value="0"></enum>
+            <enum name="FILL" value="1"></enum>
+        </attr>
+    </declare-styleable>
+
+
+    <!-- LabelView -->
+    <declare-styleable name="LabelView">
+        <!-- 设置文字内容 -->
+        <attr name="lv_text" format="string"/>
+        <!-- 设置文字颜色,默认#ffffff -->
+        <attr name="lv_text_color" format="color"/>
+        <!-- 设置文字大小,默认11sp -->
+        <attr name="lv_text_size" format="dimension"/>
+        <!-- 设置文字是否支持加粗,默认true -->
+        <attr name="lv_text_bold" format="boolean"/>
+        <!-- 设置文字是否支持全部大写,默认true-->
+        <attr name="lv_text_all_caps" format="boolean"/>
+        <!-- 设置背景颜色,默认"#FF4081"-->
+        <attr name="lv_background_color" format="color"/>
+        <!-- 设置LabelView所在矩形最小宽高,默认mFillTriangle?35dp:50dp-->
+        <attr name="lv_min_size" format="dimension"/>
+        <!-- 设置文字上下padding,默认3.5dp,mFillTriangle为true时无效-->
+        <attr name="lv_padding" format="dimension"/>
+        <!-- 设置LabelView方向 -->
+        <attr name="lv_gravity" format="enum">
+            <enum name="TOP_LEFT" value="51"/>
+            <enum name="TOP_RIGHT" value="53"/>
+            <enum name="BOTTOM_LEFT" value="83"/>
+            <enum name="BOTTOM_RIGHT" value="85"/>
+        </attr>
+        <!-- 设置是否填充三角区域,默认false -->
+        <attr name="lv_fill_triangle" format="boolean"/>
+    </declare-styleable>
+
+    <!-- wheelview-->
+    <declare-styleable name="androidWheelView">
+        <attr name="awv_textsize" format="integer"/>
+        <attr name="awv_lineSpace" format="float"/>
+        <attr name="awv_centerTextColor" format="integer"/>
+        <attr name="awv_outerTextColor" format="integer"/>
+        <attr name="awv_dividerTextColor" format="integer"/>
+        <attr name="awv_itemsVisibleCount" format="integer"/>
+        <attr name="awv_isLoop" format="boolean"/>
+        <attr name="awv_initialPosition" format="integer"/>
+        <attr name="awv_scaleX" format="float"/>
+    </declare-styleable>
+
+    <!--点击产生涟漪效果-->
+    <declare-styleable name="RippleBackground">
+        <attr name="rb_color" format="color"/>
+        <attr name="rb_strokeWidth" format="dimension"/>
+        <attr name="rb_radius" format="dimension"/>
+        <attr name="rb_duration" format="integer"/>
+        <attr name="rb_rippleAmount" format="integer"/>
+        <attr name="rb_scale" format="float"/>
+        <attr name="rb_type" format="enum">
+            <enum name="fillRipple" value="0"/>
+            <enum name="strokeRipple" value="1"/>
+        </attr>
+    </declare-styleable>
+
+    <!--另一中涟漪效果-->
+    <declare-styleable name="RippleView">rv_zoomDuration
+        <attr name="rv_alpha" format="integer"/>
+        <attr name="rv_framerate" format="integer"/>
+        <attr name="rv_rippleDuration" format="integer"/>
+        <attr name="rv_zoomDuration" format="integer"/>
+        <attr name="rv_color" format="color"/>
+        <attr name="rv_centered" format="boolean"/>
+        <attr name="rv_type" format="enum">
+            <enum name="simpleRipple" value="0"/>
+            <enum name="doubleRipple" value="1"/>
+            <enum name="rectangle" value="2"/>
+        </attr>
+        <attr name="rv_ripplePadding" format="dimension"/>
+        <attr name="rv_zoom" format="boolean"/>
+        <attr name="rv_zoomScale" format="float"/>
+    </declare-styleable>
+
+    <!--第三种涟漪效果。。。-->
+    <declare-styleable name="MaterialRippleLayout">
+        <attr name="mrl_rippleColor" format="color" localization="suggested"/>
+        <attr name="mrl_rippleDimension" format="dimension" localization="suggested"/>
+        <attr name="mrl_rippleOverlay" format="boolean" localization="suggested"/>
+        <attr name="mrl_rippleAlpha" format="float" localization="suggested"/>
+        <attr name="mrl_rippleDuration" format="integer" localization="suggested"/>
+        <attr name="mrl_rippleFadeDuration" format="integer" localization="suggested"/>
+        <attr name="mrl_rippleHover" format="boolean" localization="suggested"/>
+        <attr name="mrl_rippleBackground" format="color" localization="suggested"/>
+        <attr name="mrl_rippleDelayClick" format="boolean" localization="suggested"/>
+        <attr name="mrl_ripplePersistent" format="boolean" localization="suggested"/>
+        <attr name="mrl_rippleInAdapter" format="boolean" localization="suggested"/>
+        <attr name="mrl_rippleRoundedCorners" format="dimension" localization="suggested"/>
+    </declare-styleable>
+</resources>
